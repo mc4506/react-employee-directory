@@ -1,19 +1,26 @@
 // links to AddEmployee and EmployeeTable
-import React from "react";
+import React, { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 
 function Navbar() {
-	const location = useLocation();
+    const location = useLocation();
+    const [isNavCollapsed, setIsNavCollpased] = useState(true);
+
+    function handleNavCollpase() {
+        setIsNavCollpased(!isNavCollapsed)
+    }
+
 	return (
-		<nav className="navbar navbar-expand-md">
+		<nav className="navbar navbar-expand-md navbar-light bg-light">
 			<Link to="/" className="navbar-brand">
 				React Employee Directory App
 			</Link>
             <button className="navbar-toggler" type="button" data-toggle="collapse" 
-                data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                data-target="#navbarNav" aria-controls="navbarNav" aria-expanded={!isNavCollapsed ? true : false} aria-label="Toggle navigation"
+                onClick={handleNavCollpase}>
                 <span className="navbar-toggler-icon"></span>
             </button>
-            <div className="collapse navbar-collapse" id="navbarNav">
+            <div className={`${isNavCollapsed ? 'collapse' : ''} navbar-collapse`} id="navbarNav">
                 <ul className="navbar-nav">
                 <li className="nav-item">
                     <Link to="/add-employee" className={location.pathname==="/add-employee" ? "nav-link active" : "nav-link"}>
