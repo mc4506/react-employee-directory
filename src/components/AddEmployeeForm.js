@@ -1,5 +1,5 @@
 // react form to add employee info
-// firstName, lastName, email, phoneNumber, position(select from dropdown), department (select from drop down)
+// firstName, lastName, email, phoneNumber, title(select from dropdown), department (select from drop down)
 // Submit button to use fs to write to employees.json
 
 import React from 'react';
@@ -28,12 +28,11 @@ class AddEmployeeForm extends React.Component {
         lastName: "",
         email: "",
         phoneNumber: "",
-        // department: "",
-        position: "---",
+        title: "---",
         hasFormError: false,
         invalidEmail: false,
         invalidPhone: false,
-        invalidPosition: false
+        invalidTitle: false
     };
 
     handleInputChange = event => {
@@ -49,12 +48,12 @@ class AddEmployeeForm extends React.Component {
         if(this.state.phoneNumber.length === 3) {
             this.setState( {
                 phoneNumber: this.state.phoneNumber + "-"
-            })
+            });
         }
         if(this.state.phoneNumber.length === 7) {
             this.setState( {
                 phoneNumber: this.state.phoneNumber + "-"
-            })
+            });
         }
     };
 
@@ -65,8 +64,8 @@ class AddEmployeeForm extends React.Component {
             hasFormError: false,
             invalidEmail: false,
             invalidPhone: false,
-            invalidPosition: false
-        })
+            invalidTitle: false
+        });
 
         if(!validEmail(this.state.email)) {
             this.setState( {
@@ -80,12 +79,23 @@ class AddEmployeeForm extends React.Component {
                 invalidPhone: true
             });
         };
-        if(this.state.position === '---') {
+        if(this.state.title === '---') {
             this.setState( {
                 hasFormError: true,
-                invalidPosition: true
-            })
+                invalidTitle: true
+            });
         }
+
+        // if(!this.state.hasFormError) {
+        //     let record = {
+        //         firstName: this.state.firstName,
+        //         lastName: this.state.lastName,
+        //         email: this.state.email,
+        //         phoneNumber: this.state.phoneNumber,
+        //         title: this.state.title
+        //     };
+
+        // }
 
     }
 
@@ -128,22 +138,10 @@ class AddEmployeeForm extends React.Component {
                         />
                         <small id="phoneHelpBlock" className="form-text text-muted">Format: 123-456-7890</small>
                     </div>
-                    {/* <div className="form-group">
-                        <label htmlFor="department">Department</label>
-                        <select className="form-control" id="department" 
-                            name="department" 
-                            onChange={this.handleInputChange}>
-                                <option value="---">---</option>
-                                <option value="administrative">Administrative</option>
-                                <option value="design">Design</option>
-                                <option value="engineering">Engineering</option>
-                                <option value="human resources">Human Resources</option>
-                        </select>
-                    </div> */}
                     <div className="form-group">
-                        <label htmlFor="position">Position <span style={styles.invalid}>{this.state.invalidPosition && "Select a Valid Position"}</span></label>
-                        <select className="form-control" id="position" 
-                            name="position"
+                        <label htmlFor="title">Title <span style={styles.invalid}>{this.state.invalidTitle && "Select a Valid title"}</span></label>
+                        <select className="form-control" id="title" 
+                            name="title"
                             onChange={this.handleInputChange}>
                                 <option value="---">---</option>
                                 <option value="Engineer">Engineer</option>
