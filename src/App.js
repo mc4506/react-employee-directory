@@ -11,7 +11,7 @@ function App() {
     <Router>
       <Header></Header>
       {/* <Route exact path="/add-employee" component={AddEmployeeForm} /> */}
-      <Route exact path="/" component={EmployeeTable} />
+      <Route exact path="/react-employee-directory" component={EmployeeTable} />
     </Router>
   );
 }

@@ -28,7 +28,7 @@ function Navbar() {
                     </Link>
                 </li> */}
                 <li className="nav-item">
-                    <Link to="/" className={location.pathname==="/" ? "nav-link active" : "nav-link"}>
+                    <Link to="/react-employee-directory" className={location.pathname==="/react-employee-directory" ? "nav-link active" : "nav-link"}>
                         Employee Directory
                     </Link>
                 </li>
