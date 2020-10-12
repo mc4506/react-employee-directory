@@ -2,7 +2,7 @@
 
 ## Description
 
-Workout Tracker that utilizes MongoDB database to track a user's daily exercises such as bench presses or running. Weekly workout stats are charted using Chart.js. 
+This is a React app using Bootstrap CSS framework. Search records or sort records by ascending or descending fields.
 
 Deployed Site: <https://mc4506.github.io/react-employee-directory/>
 
