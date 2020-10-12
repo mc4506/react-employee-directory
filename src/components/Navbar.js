@@ -11,8 +11,8 @@ function Navbar() {
     }
 
 	return (
-		<nav className="navbar navbar-expand-md navbar-light bg-primary">
-			<Link to="/" className="navbar-brand text-light">
+		<nav className="navbar navbar-expand-md navbar-dark bg-primary">
+			<Link to="/" className="navbar-brand">
 				React Employee Directory App
 			</Link>
             <button className="navbar-toggler" type="button" data-toggle="collapse" 
