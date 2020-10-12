@@ -32,19 +32,24 @@ class EmployeeTable extends React.Component {
     }
 
     filterRecords = (key, value) => {
-        this.setState({
-            employees: this.state.employees.filter( employee => {
-                return (employee[key] === value)
-            })
+        let filteredEmployees = employees.filter( employee => {
+            return (employee[key] == value)
         })
+
+        this.setState({ employees: filteredEmployees })
     }
+
+    showAllRecords = () => {
+        this.setState({employees: employees});
+    }
+
 
     render() {
         return (
             <div>
-                <SearchForm />
+                <SearchForm filterRecords={this.filterRecords} showAll={this.showAllRecords}/>
                 <table className="container table table-striped">
-                    <TableHeadings sortAsc={this.sortAsc} sortDesc={this.sortDesc} filterRecords={this.filterRecords}/>
+                    <TableHeadings sortAsc={this.sortAsc} sortDesc={this.sortDesc}/>
                     <TableBody>
                     {this.state.employees.map( employee => 
                         <EmployeeRow 
