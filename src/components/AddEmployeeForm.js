@@ -103,7 +103,7 @@ class AddEmployeeForm extends React.Component {
         return(
             <div>
                 <FormAlertMessage hasError={this.state.hasFormError}></FormAlertMessage>
-                <form className="container" onSubmit={this.handleFormSubmit}>
+                <form className="container my-4" onSubmit={this.handleFormSubmit}>
                     <div className="form-group">
                         <label htmlFor="firstName">First Name</label>
                         <input type="text" className="form-control" id="firstName" required
