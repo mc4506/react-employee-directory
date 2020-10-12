@@ -13,12 +13,20 @@ class EmployeeTable extends React.Component {
 
     sortAsc = (key) => {
         this.setState({
-            employees: employees.sort( (a, b) => a[key] - b[key] )
+            employees: employees.sort( (a, b) => {
+                if(a[key] > b[key]) return 1;
+                if(a[key] < b[key]) return -1;
+                return 0;
+            })
         })
     }
     sortDesc = (key) => {
         this.setState({
-            employees: employees.sort( (a, b) => b[key] - a[key] )
+            employees: employees.sort( (a, b) => {
+                if(b[key] > a[key]) return 1;
+                if(b[key] < a[key]) return -1;
+                return 0;
+            })
         })
     }
 
