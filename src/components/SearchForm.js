@@ -43,9 +43,12 @@ class SearchForm extends React.Component {
 
     handleShowAll = (event) => {
         event.preventDefault();
+        // reset drop down
+        const searchFieldEl = document.getElementById("searchField");
+        searchFieldEl.selectedIndex = 0;
+
          // reset all states
          this.setState({
-            searchField: "---",
             searchTerm: "",
             invalidSearchField: false,
             invalidSearchTerm: false
