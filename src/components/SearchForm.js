@@ -43,6 +43,13 @@ class SearchForm extends React.Component {
 
     handleShowAll = (event) => {
         event.preventDefault();
+         // reset all states
+         this.setState({
+            searchField: "---",
+            searchTerm: "",
+            invalidSearchField: false,
+            invalidSearchTerm: false
+        });
         this.props.showAll();
     }
     
