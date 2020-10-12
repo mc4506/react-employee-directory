@@ -1,28 +1,11 @@
 import React from 'react';
-import EmployeeRow from './EmployeeRow';
-import employees from "../employees.json";
 
-class TableBody extends React.Component {
-    state = {
-        employees: employees
-    }
-    render() {
+function TableBody(props) {
         return(
             <tbody>
-                {employees.map( employee => 
-                    <EmployeeRow 
-                        employeeId={employee.id}
-                        firstName={employee.firstName}
-                        lastName={employee.lastName}
-                        title={employee.title}
-                        email={employee.email}
-                        phoneNumber={employee.phoneNumber}
-                    />
-                )}
+                {props.children}
             </tbody>
         )
-    }
-
 }
 
 export default TableBody;
