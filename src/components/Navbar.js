@@ -22,11 +22,11 @@ function Navbar() {
             </button>
             <div className={`${isNavCollapsed ? 'collapse' : ''} navbar-collapse`} id="navbarNav">
                 <ul className="navbar-nav">
-                <li className="nav-item">
+                {/* <li className="nav-item">
                     <Link to="/add-employee" className={location.pathname==="/add-employee" ? "nav-link active" : "nav-link"}>
                         Add Employee
                     </Link>
-                </li>
+                </li> */}
                 <li className="nav-item">
                     <Link to="/" className={location.pathname==="/" ? "nav-link active" : "nav-link"}>
                         Employee Directory

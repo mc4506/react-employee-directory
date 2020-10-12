@@ -10,7 +10,7 @@ function App() {
   return (
     <Router>
       <Header></Header>
-      <Route exact path="/add-employee" component={AddEmployeeForm} />
+      {/* <Route exact path="/add-employee" component={AddEmployeeForm} /> */}
       <Route exact path="/" component={EmployeeTable} />
     </Router>
   );

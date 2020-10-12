@@ -102,6 +102,7 @@ class AddEmployeeForm extends React.Component {
     render() {
         return(
             <div>
+                <h1>FORM NOT CONNECTED TO BACKEND</h1>
                 <FormAlertMessage hasError={this.state.hasFormError}></FormAlertMessage>
                 <form className="container my-4" onSubmit={this.handleFormSubmit}>
                     <div className="form-group">
